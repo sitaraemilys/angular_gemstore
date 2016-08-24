@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3">
+        <a href ng-class="{active: tab.isSet(1)}" ng-click="tab.setTab(1)">Description</a></li>
+      <li class="tab col s3">
+        <a href ng-class="{active: tab.isSet(2)}" ng-click="tab.setTab(2)">Specs</a></li>
+      <li class="tab col s3">
+        <a href ng-class="{active: tab.isSet(3)}" ng-click="tab.setTab(3)">Reviews</a></li>
+    </ul>
+    <div ng-show="tab.isSet(1)">
+      <h4>Description</h4>
+      <blockquote>{{product.description}}</blockquote>
+    </div>
+    <div ng-show="tab.isSet(2)">
+      <h4>Specs</h4>
+      <ul>
+        <li class="spec">Shine: {{product.shine}}</li>
+        <li class="spec">Rarity: {{product.rarity}} </li>
+        <li class="spec">Colour: {{product.color}} </li>
+        <li class="spec">Faces: {{product.faces}} </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <product-review ng-show="tab.isSet(3)">
+  </product-review>
+</section>
